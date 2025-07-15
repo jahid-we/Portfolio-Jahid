@@ -6,7 +6,7 @@ const currentPath = page.url
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand-xl navbar-light bg-light shadow-sm sticky-top">
     <div class="container-fluid">
       <!-- Logo -->
       <Link href="/" class="navbar-brand d-flex align-items-center">
@@ -52,8 +52,8 @@ const currentPath = page.url
 
 <style scoped>
 .sitename {
-  font-size: 1.75rem;
-  text-shadow: 1px 1px 1px #34b7a7;
+  font-size: 2.75rem;
+  text-shadow: 1px 1px 3px #34b7a7;
   font-weight: bold;
   color: #34b7a7;
 }
