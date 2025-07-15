@@ -1,4 +1,5 @@
 <script setup>
+import {Link} from '@inertiajs/vue3'
 
 </script>
 
@@ -9,13 +10,13 @@
           © <strong>Jahid Hasan</strong> All Rights Reserved
         </p>
         <div class="social-links d-flex justify-content-center">
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <Link href="#"><i class="bi bi-twitter-x"></i></Link>
+          <Link href="#"><i class="bi bi-facebook"></i></Link>
+          <Link href="#"><i class="bi bi-instagram"></i></Link>
+          <Link href="#"><i class="bi bi-linkedin"></i></Link>
         </div>
         <div class="credits text-center">
-          Originally by <a href="https://bootstrapmade.com/">BootstrapMade</a> | Rebuilt by Jahid Hasan
+          Originally by <Link href="https://bootstrapmade.com/">BootstrapMade</Link> | Rebuilt by Jahid Hasan
         </div>
       </div>
     </footer>

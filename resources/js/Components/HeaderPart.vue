@@ -1,53 +1,64 @@
 <script setup>
-import { usePage } from '@inertiajs/vue3'
+import { Link, usePage } from '@inertiajs/vue3'
 
 const page = usePage()
 const currentPath = page.url
 </script>
 
 <template>
- <!-- Header -->
-    <header id="header" class="header d-flex align-items-center light-background sticky-top">
-      <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-          <h1 class="sitename">Jahid</h1>
-        </a>
+  <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <Link href="/" class="navbar-brand d-flex align-items-center">
+        <h1 class="sitename mb-0">Jahid</h1>
+      </Link>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a :href="'/'" :class="{ active: currentPath === '/' }">Home</a></li>
-            <li><a :href="'/about'" :class="{ active: currentPath === '/about' }">About</a></li>
-            <li><a :href="'/resume'" :class="{ active: currentPath === '/resume' }">Resume</a></li>
-            <li><a :href="'/services'" :class="{ active: currentPath === '/services' }">Services</a></li>
-            <li><a :href="'/contact'" :class="{ active: currentPath === '/contact' }">Contact</a></li>
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <!-- <li class="dropdown">
-              <a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown">
-                  <a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li> -->
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-        <div class="header-social-links">
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div>
+      <!-- Centered Navigation Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mb-2 mb-xl-0">
+          <li class="nav-item">
+            <Link :href="'/'" class="nav-link" :class="{ active: currentPath === '/' }">Home</Link>
+          </li>
+          <li class="nav-item">
+            <Link :href="'/about'" class="nav-link" :class="{ active: currentPath === '/about' }">About</Link>
+          </li>
+          <li class="nav-item">
+            <Link :href="'/resume'" class="nav-link" :class="{ active: currentPath === '/resume' }">Resume</Link>
+          </li>
+          <li class="nav-item">
+            <Link :href="'/services'" class="nav-link" :class="{ active: currentPath === '/services' }">Services</Link>
+          </li>
+          <li class="nav-item">
+            <Link :href="'/contact'" class="nav-link" :class="{ active: currentPath === '/contact' }">Contact</Link>
+          </li>
+        </ul>
       </div>
-    </header>
+
+      <!-- Social Icons aligned right -->
+      <div class="d-flex gap-3 ms-auto">
+        <Link href="#"><i class="bi bi-twitter-x"></i></Link>
+        <Link href="#"><i class="bi bi-facebook"></i></Link>
+        <Link href="#"><i class="bi bi-instagram"></i></Link>
+        <Link href="#"><i class="bi bi-linkedin"></i></Link>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scoped>
-
+.sitename {
+  font-size: 1.75rem;
+  text-shadow: 1px 1px 1px #34b7a7;
+  font-weight: bold;
+  color: #34b7a7;
+}
+.nav-link.active {
+  font-weight: bold;
+  color: #34b7a7 !important;
+}
 </style>

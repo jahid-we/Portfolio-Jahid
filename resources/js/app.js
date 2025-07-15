@@ -1,24 +1,7 @@
 import { createApp, h } from 'vue'
-import { createInertiaApp } from '@inertiajs/vue3'
-
-// ✅ Optional: extract logic to a utility for cleanliness
-function initMobileNav() {
-  const toggleBtn = document.querySelector('.mobile-nav-toggle')
-  const body = document.body
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('mobile-nav-active')
-    })
-  }
-
-  const navLinks = document.querySelectorAll('.navmenu a')
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      body.classList.remove('mobile-nav-active')
-    })
-  })
-}
+import { createInertiaApp, router } from '@inertiajs/vue3'
+import NProgress from 'nprogress';
+import '../css/nprogress-custom.css';
 
 createInertiaApp({
   resolve: name => {
@@ -30,7 +13,8 @@ createInertiaApp({
     app.use(plugin)
     app.mount(el)
 
-    // ✅ Run global DOM logic after app is mounted
-    initMobileNav()
   },
 })
+// ✅ NProgress loader
+router.on('start', () => NProgress.start());
+router.on('finish', () => NProgress.done());

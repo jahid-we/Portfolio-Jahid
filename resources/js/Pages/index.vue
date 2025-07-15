@@ -1,20 +1,12 @@
 <script setup>
 import { onMounted } from 'vue'
+import { Link } from '@inertiajs/vue3'
 import AOS from 'aos'
 import HeaderPart from '../Components/HeaderPart.vue'
 import Footer from '../Components/Footer.vue'
 
 onMounted(() => {
   AOS.init()
-
-  // ✅ Hide preloader
-  window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader')
-    if (preloader) {
-      preloader.style.display = 'none'
-    }
-  })
-
   // ✅ Scroll Top Logic
   const scrollTopBtn = document.getElementById('scroll-top')
 
@@ -50,7 +42,7 @@ onMounted(() => {
             <div class="col-lg-8">
               <h2>Jahid Hasan</h2>
               <p>I'm a Professional Web Developer From Bangladesh</p>
-              <a href="/about" class="btn-get-started">About Me</a>
+              <Link href="/about" class="btn-get-started">About Me</Link>
             </div>
           </div>
         </div>
@@ -61,10 +53,9 @@ onMounted(() => {
    <Footer />
 
     <!-- Scroll Top & Preloader -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <Link href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
       <i class="bi bi-arrow-up-short"></i>
-    </a>
-    <div id="preloader"></div>
+    </Link>
   </div>
 </template>
 <style scoped>
