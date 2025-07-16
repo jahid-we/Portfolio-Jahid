@@ -16,7 +16,7 @@ import {Link} from '@inertiajs/vue3'
           <Link href="#"><i class="bi bi-linkedin"></i></Link>
         </div>
         <div class="credits text-center">
-          Originally by <Link href="https://bootstrapmade.com/">BootstrapMade</Link> | Rebuilt by Jahid Hasan
+          Template by <Link href="https://bootstrapmade.com/">BootstrapMade</Link> | Integrated with Laravel, Inertia & Vue by <strong>Jahid Hasan</strong>
         </div>
       </div>
     </footer>

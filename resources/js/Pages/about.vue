@@ -58,7 +58,7 @@ onMounted(() => {
                                         <li>
                                             <i class="bi bi-chevron-right"></i>
                                             <strong>Birthday:</strong>
-                                            <span>1 May 1995</span>
+                                            <span>3 November 2003</span>
                                         </li>
                                         <li>
                                             <i class="bi bi-chevron-right"></i>
@@ -82,12 +82,12 @@ onMounted(() => {
                                         <li>
                                             <i class="bi bi-chevron-right"></i>
                                             <strong>Age:</strong>
-                                            <span>30</span>
+                                            <span>22</span>
                                         </li>
                                         <li>
                                             <i class="bi bi-chevron-right"></i>
                                             <strong>Degree:</strong>
-                                            <span>Master's</span>
+                                            <span>BA</span>
                                         </li>
                                         <li>
                                             <i class="bi bi-chevron-right"></i>

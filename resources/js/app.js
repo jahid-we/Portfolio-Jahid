@@ -3,6 +3,10 @@ import { createInertiaApp, router } from '@inertiajs/vue3'
 import NProgress from 'nprogress';
 import '../css/nprogress-custom.css';
 
+NProgress.configure({
+  showSpinner: false, // 🔴 turn off the spinner
+})
+
 createInertiaApp({
   resolve: name => {
     const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })

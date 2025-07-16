@@ -114,7 +114,7 @@ onMounted(() => {
                             data-aos-delay="200"
                         >
                             <h3 class="resume-title">Project Experience</h3>
-                            <div class="resume-item" data-aos="fade-up">
+                            <div class="resume-item">
                                 <h4>Freelance Time Tracker</h4>
                                 <p>
                                     Web-based time tracking solution for
@@ -127,7 +127,7 @@ onMounted(() => {
                                     >View on GitHub</a
                                 >
                             </div>
-                            <div class="resume-item" data-aos="fade-up">
+                            <div class="resume-item">
                                 <h4>Smart Contact Manager</h4>
                                 <p>
                                     CRUD app for managing contacts. Built with
@@ -139,7 +139,7 @@ onMounted(() => {
                                     >View on GitHub</a
                                 >
                             </div>
-                            <div class="resume-item" data-aos="fade-up">
+                            <div class="resume-item">
                                 <h4>Simple E-Commerce App</h4>
                                 <p>
                                     Basic shopping platform with cart
