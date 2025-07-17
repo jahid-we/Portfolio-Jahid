@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [PageController::class, 'indexPage']);
 
-// Authentication Route Start***********************************************
+// =====================================================
+// =============== Authentication Routes ===============
+// =====================================================
 Route::post('/login', ['AuthenticationController', 'login'])->middleware('guest')->name('login');
 
 Route::middleware('auth')->controller(AuthenticationController::class)->group(function () {
@@ -15,16 +17,18 @@ Route::middleware('auth')->controller(AuthenticationController::class)->group(fu
     Route::post('/logout', 'logout')->name('logout');
 
 });
-// Authentication Route End*************************************************
 
-// Reset Password Route Start********************************
+// =====================================================
+// =============== Reset Password Routes ===============
+// =====================================================
 Route::middleware('guest')->controller(ResetPasswordController::class)->group(function () {
     Route::post('/send-email', 'sendEmail')->name('sendEmail');
     Route::post('/reset-password', 'resetPassword')->name('resetPassword');
 });
-// Reset Password Route End********************************
 
-//  Public Page Routes Start ***************************************************************
+// =====================================================
+// =============== Public Page Routes ===============
+// =====================================================
 Route::controller(PageController::class)->group(function () {
     Route::get('/', 'indexPage')->name('home');
     Route::get('/about', 'aboutPage')->name('about');
@@ -32,4 +36,4 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/services', 'servicesPage')->name('services');
     Route::get('/contact', 'contactPage')->name('contact');
 });
-//  Public Page Routes End ******************************************************************
+
