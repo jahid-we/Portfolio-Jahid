@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MapUrl extends Model
 {
-    protected $fillable =[
+    protected $fillable = [
         'map_url',
     ];
 }

@@ -1,11 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\PageController;
+use Illuminate\Support\Facades\Route;
 
-Route::get("/",[PageController::class, "indexPage"]);
-Route::get("/about",[PageController::class, "aboutPage"]);
-Route::get("/resume",[PageController::class, "resumePage"]);
-Route::get("/services",[PageController::class, "servicesPage"]);
-Route::get("/contact",[PageController::class, "contactPage"]);
+// Route::get('/', [PageController::class, 'indexPage']);
 
+//  Public Page Routes Start ***************************************************************
+Route::controller(PageController::class)->group(function () {
+    Route::get('/', 'indexPage')->name('home');
+    Route::get('/about', 'aboutPage')->name('about');
+    Route::get('/resume', 'resumePage')->name('resume');
+    Route::get('/services', 'servicesPage')->name('services');
+    Route::get('/contact', 'contactPage')->name('contact');
+});
+//  Public Page Routes End ******************************************************************

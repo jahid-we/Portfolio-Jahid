@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('map_urls', function (Blueprint $table) {
             $table->id();
-            $table->string("map_url");
+            $table->string('map_url');
             $table->timestamps();
         });
     }

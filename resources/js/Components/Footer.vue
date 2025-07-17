@@ -4,7 +4,7 @@ import {Link} from '@inertiajs/vue3'
 </script>
 
 <template>
- <footer id="footer" class="footer light-background">
+ <footer id="footer" class="footer light-background" >
       <div class="container">
         <p class="text-center">
           © <strong>Jahid Hasan</strong> All Rights Reserved

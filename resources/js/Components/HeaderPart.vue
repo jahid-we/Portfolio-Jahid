@@ -10,7 +10,7 @@ const currentPath = page.url
     <div class="container-fluid">
       <!-- Logo -->
       <Link href="/" class="navbar-brand d-flex align-items-center">
-        <h1 class="sitename mb-0">Jahid</h1>
+        <h1 class="sitename mb-0" data-aos="zoom-in">Jahid</h1>
       </Link>
 
       <!-- Mobile Toggle -->
