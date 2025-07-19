@@ -37,3 +37,12 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/contact', 'contactPage')->name('contact');
 });
 
+// =====================================================
+// =============== Admin Page Routes ===================
+// =====================================================
+
+Route::controller(PageController::class)->group(function () {
+    Route::get('/login', 'loginPage')->name('loginPage');
+    Route::get('/send-email', 'sendEmailPage')->name('sendEmailPage');
+
+});

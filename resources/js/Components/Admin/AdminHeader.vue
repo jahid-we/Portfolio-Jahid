@@ -10,7 +10,7 @@ const currentPath = page.url
     <div class="container-fluid">
       <!-- Logo -->
       <Link href="/" class="navbar-brand d-flex align-items-center">
-        <h1 class="sitename mb-0" data-aos="zoom-in">Jahid</h1>
+        <h1 class="sitename mb-0" data-aos="zoom-in">Admin</h1>
       </Link>
 
       <!-- Mobile Toggle -->
@@ -19,7 +19,7 @@ const currentPath = page.url
       </button>
 
       <!-- Centered Navigation Links -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <!-- <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav mb-2 mb-xl-0">
           <li class="nav-item">
             <Link :href="'/'" class="nav-link" :class="{ active: currentPath === '/' }">Home</Link>
@@ -37,7 +37,7 @@ const currentPath = page.url
             <Link :href="'/contact'" class="nav-link" :class="{ active: currentPath === '/contact' }">Contact</Link>
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Social Icons aligned right -->
       <div class="d-flex gap-3 ms-auto">
@@ -45,7 +45,6 @@ const currentPath = page.url
         <Link href="#"><i class="bi bi-facebook"></i></Link>
         <Link href="#"><i class="bi bi-instagram"></i></Link>
         <Link href="#"><i class="bi bi-linkedin"></i></Link>
-        <Link href="/login" class="btn btn-sm text-white shadow-sm" style="background-color: #34b7a7;">Admin Login</Link>
       </div>
     </div>
   </nav>
@@ -61,8 +60,5 @@ const currentPath = page.url
 .nav-link.active {
   font-weight: bold;
   color: #34b7a7 !important;
-}
-.btn:hover {
-  opacity: 0.9;
 }
 </style>

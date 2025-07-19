@@ -44,4 +44,26 @@ class PageController extends Controller
     }
     // Contact Page End ***************************************
 
+
+
+
+    // ADMIN*****************************************
+
+    // Login Page Start *************************************
+    public function loginPage(Request $request): Response
+    {
+        return Inertia::render('Admin/Login');
+    }
+    // Login Page End ***************************************
+
+    // Send Email Page Start *************************************
+    public function sendEmailPage(Request $request): Response
+    {
+        return Inertia::render('Admin/SendEmail');
+    }
+    // Send Email Page End ***************************************
+
+
+
+
 }
