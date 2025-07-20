@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Route;
 // =====================================================
 // =============== Authentication Routes ===============
 // =====================================================
-Route::post('/login', ['AuthenticationController', 'login'])->middleware('guest')->name('login');
+Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
 
 Route::middleware('auth')->controller(AuthenticationController::class)->group(function () {
 
-    Route::post('/logout', 'logout')->name('logout');
+    Route::get('/logout', 'logout')->name('logout');
 
 });
 
@@ -44,5 +44,8 @@ Route::controller(PageController::class)->group(function () {
 Route::controller(PageController::class)->group(function () {
     Route::get('/login', 'loginPage')->name('loginPage');
     Route::get('/send-email', 'sendEmailPage')->name('sendEmailPage');
+    Route::get('/resetPassword/{token}', 'resetPasswordPage')->name('resetPasswordPage');
 
 });
+
+

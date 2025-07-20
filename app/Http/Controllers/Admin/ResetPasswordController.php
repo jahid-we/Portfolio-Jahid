@@ -20,7 +20,6 @@ class ResetPasswordController extends Controller
     public function sendEmail(Request $request)
     {
         try {
-
             $request->validate([
                 'email' => 'required|string|email|max:255|exists:users,email',
             ]);

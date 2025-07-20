@@ -7,7 +7,8 @@ import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
 NProgress.configure({
-  showSpinner: false, // 🔴 turn off the spinner
+    //  turn off the spinner
+    showSpinner: false,
 })
 
 // Toast config (optional)
@@ -20,6 +21,10 @@ const toastOptions = {
   pauseOnHover: true,
   draggable: true,
   draggablePercent: 0.6,
+  transition: "Vue-Toastification__bounce",
+  maxToasts: 5,
+  newestOnTop: true,
+  transitionDuration: 400,
 }
 
 createInertiaApp({

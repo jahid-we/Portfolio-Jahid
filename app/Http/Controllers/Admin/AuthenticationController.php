@@ -24,7 +24,7 @@ class AuthenticationController extends Controller
             if (Auth::attempt($credentials, $remember)) {
                 $request->session()->regenerateToken();
 
-                return ResponseHelper::Out(true, 'Login SuccessFully', 200);
+                return ResponseHelper::Out(true, 'Login Successful', 200);
             } else {
                 return ResponseHelper::Out(false, 'Invalid Credentials,Check Your Email Or Password.', 401);
             }

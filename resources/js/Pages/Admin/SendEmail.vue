@@ -1,9 +1,49 @@
 <script setup>
-import { onMounted } from "vue";
-import { Link } from '@inertiajs/vue3'
+import { ref,  onMounted } from "vue";
+import { Link, router } from '@inertiajs/vue3'
 import AOS from "aos";
+
+import { showSuccess, showError} from '../../Utils/VueToast.js';
 import AdminHeader from '../../Components/Admin/AdminHeader.vue';
 import Footer from '../../Components/Footer.vue';
+import axios from "axios";
+
+const email = ref('');
+
+const sendResetLink =async () =>{
+    if(!email.value){
+        showError("Please enter email");
+        return;
+    }
+    try{
+        const response = await axios.post('/send-email', {email: email.value});
+        if(response.status === 200){
+            email.value = "";
+            setTimeout(() => {
+                router.visit("/login");
+            }, 1000);
+            showSuccess(response.data.data);
+        }else{
+            showError(response.data.data);
+        }
+    } catch (error) {
+        if (error.response) {
+            if (error.response.status === 422) {
+                // ValidationException from backend
+                const validationErrors = error.response.data.data
+                for (let field in validationErrors) {
+                    showError(validationErrors[field][0])
+                }
+            } else {
+                // Any other error with a backend message
+                showError(error.response.data.data || 'Unexpected error occurred.')
+            }
+        } else {
+            // Network or unknown error
+            showError('Network error. Please try again later.')
+        }
+    }
+}
 
 onMounted(() => {
     AOS.init();
@@ -20,16 +60,14 @@ onMounted(() => {
         Enter your email and we'll send you a password reset link.
       </p>
 
-      <form>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" required />
+          <input type="email" v-model="email" class="form-control" id="email" required />
         </div>
 
         <div class="d-grid">
-          <button type="submit" class="btn text-white shadow" style="background-color: #34b7a7;">Send Reset Link</button>
+          <button type="submit" @click.prevent="sendResetLink()" class="btn text-white shadow" style="background-color: #34b7a7;">Send Reset Link</button>
         </div>
-      </form>
 
       <div class="text-center mt-3">
         <Link href="/login" class="text-decoration-none">Back to Login</Link>

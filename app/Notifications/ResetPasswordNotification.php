@@ -3,10 +3,11 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
 
-class ResetPasswordNotification extends Notification
+class ResetPasswordNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -15,7 +16,7 @@ class ResetPasswordNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct($token)
     {
         $this->token = $token;
     }
@@ -35,7 +36,7 @@ class ResetPasswordNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $resetUrl = config('app.url').'/reset-password/'.$this->token;
+        $resetUrl = config('app.url').'/resetPassword/'.$this->token;
 
         return (new MailMessage)
             ->subject('Reset Your Password')
