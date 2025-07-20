@@ -78,6 +78,7 @@ onMounted(() => {
         <!-- Main Content -->
         <div
             class="container d-flex justify-content-center align-items-center flex-grow-1 py-5"
+            data-aos="zoom-in"
         >
             <div class="col-md-6">
                 <!-- Card -->

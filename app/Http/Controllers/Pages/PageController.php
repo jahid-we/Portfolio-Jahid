@@ -44,7 +44,7 @@ class PageController extends Controller
     }
     // Contact Page End ***************************************
 
-    // ADMIN*****************************************
+    // ADMIN******************************************************************************************
 
     // Login Page Start *************************************
     public function loginPage(Request $request): Response
