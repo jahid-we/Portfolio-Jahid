@@ -44,9 +44,6 @@ class PageController extends Controller
     }
     // Contact Page End ***************************************
 
-
-
-
     // ADMIN*****************************************
 
     // Login Page Start *************************************
@@ -66,9 +63,8 @@ class PageController extends Controller
     // Reset Password Page Start *************************************
     public function resetPasswordPage(string $token): Response
     {
-        return Inertia::render('Admin/ResetPassword', ['token' => $token,'appUrl' => config('app.url')]);
+        return Inertia::render('Admin/ResetPassword', ['token' => $token, 'appUrl' => config('app.url')]);
     }
     // Reset Password Page End ***************************************
-
 
 }

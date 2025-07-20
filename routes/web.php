@@ -47,5 +47,3 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/resetPassword/{token}', 'resetPasswordPage')->name('resetPasswordPage');
 
 });
-
-
