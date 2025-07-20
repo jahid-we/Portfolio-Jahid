@@ -51,4 +51,5 @@ A modern, single-page portfolio website built with **Laravel 12**, **Inertia.js*
 ---
 
 > **Note:** Built to demonstrate real-world Laravel & Vue.js SPA structure with a clean UX/UI.
+---
 > Running
