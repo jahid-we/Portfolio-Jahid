@@ -41,9 +41,21 @@ Route::controller(PageController::class)->group(function () {
 // =============== Admin Page Routes ===================
 // =====================================================
 
-Route::controller(PageController::class)->group(function () {
+Route::middleware('guest')->controller(PageController::class)->group(function () {
     Route::get('/login', 'loginPage')->name('loginPage');
     Route::get('/send-email', 'sendEmailPage')->name('sendEmailPage');
     Route::get('/resetPassword/{token}', 'resetPasswordPage')->name('resetPasswordPage');
+
+});
+
+// =====================================================
+// =============== Admin DashBoard Routes ===================
+// =====================================================
+
+Route::middleware('auth')->controller(PageController::class)->group(function () {
+
+    Route::get('/dashboard', 'dashBoard')->name('dashBoard');
+    Route::get('/messages', 'messages')->name('messages');
+
 
 });

@@ -32,7 +32,7 @@ const handleLogin = async () =>{
             email.value = "";
             password.value = "";
             setTimeout(() => {
-                router.visit("/");
+                router.visit("/dashboard");
             }, 1000);
             showSuccess(response.data.data);
         }else{

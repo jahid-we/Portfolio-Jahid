@@ -67,4 +67,18 @@ class PageController extends Controller
     }
     // Reset Password Page End ***************************************
 
+    // Dashboard Page Start *************************************
+    public function dashBoard(Request $request): Response
+    {
+        return Inertia::render('Admin/AdminDashboard');
+    }
+    // Dashboard Page End ***************************************
+
+    // Messages Page Start *************************************
+    public function messages(Request $request): Response
+    {
+        return Inertia::render('Admin/Messages');
+    }
+    // Messages Page End ****************************************
+
 }

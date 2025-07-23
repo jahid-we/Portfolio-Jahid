@@ -3,6 +3,10 @@ import { Link, usePage } from '@inertiajs/vue3'
 
 const page = usePage()
 const currentPath = page.url
+
+const user = page.props.auth.user
+const loggedIn = page.props.auth.loggedIn
+
 </script>
 
 <template>
@@ -45,7 +49,13 @@ const currentPath = page.url
         <Link href="#"><i class="bi bi-facebook"></i></Link>
         <Link href="#"><i class="bi bi-instagram"></i></Link>
         <Link href="#"><i class="bi bi-linkedin"></i></Link>
-        <Link href="/login" class="btn btn-sm text-white shadow-sm" style="background-color: #34b7a7;">Admin Login</Link>
+         <!-- Show Dashboard link if loggedIn is true, else show Login -->
+
+          <Link v-if="loggedIn" href="/dashboard" class="btn btn-sm text-white shadow-sm" style="background-color: #34b7a7;">Dashboard</Link>
+
+
+          <Link v-if="!loggedIn" href="/login" class="btn btn-sm text-white shadow-sm" style="background-color: #34b7a7;">Admin Login</Link>
+
       </div>
     </div>
   </nav>
