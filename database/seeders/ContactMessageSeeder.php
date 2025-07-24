@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\ContactMessage;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ContactMessageSeeder extends Seeder
 {
@@ -13,7 +12,7 @@ class ContactMessageSeeder extends Seeder
      */
     public function run(): void
     {
-         ContactMessage::create([
+        ContactMessage::create([
             'name' => 'John Doe',
             'email' => 'john.doe@example.com',
             'subject' => 'Inquiry about product',

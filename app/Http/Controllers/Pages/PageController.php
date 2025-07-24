@@ -81,4 +81,18 @@ class PageController extends Controller
     }
     // Messages Page End ****************************************
 
+    // Location Page Start *************************************
+    public function location(Request $request): Response
+    {
+        return Inertia::render('Admin/Location');
+    }
+    // Location Page End ***************************************
+
+    // Address Page Start *************************************
+    public function address(Request $request): Response
+    {
+        return Inertia::render('Admin/Address');
+    }
+    // Address Page End ***************************************
+
 }

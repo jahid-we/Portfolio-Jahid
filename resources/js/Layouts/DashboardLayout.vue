@@ -1,35 +1,34 @@
 <script setup>
-import { Link, usePage, router } from '@inertiajs/vue3'
-import { ref } from 'vue'
+import { Link, usePage, router } from "@inertiajs/vue3";
+import { ref } from "vue";
 
-import { showSuccess, showError} from '../Utils/VueToast.js';
-import Footer from '../Components/Footer.vue'
-import axios from 'axios';
+import { showSuccess, showError } from "../Utils/VueToast.js";
+import Footer from "../Components/Footer.vue";
+import axios from "axios";
 
-const page = usePage()
-const currentPath = page.url
-const showSidebar = ref(false) // Hidden by default on small screens
+const page = usePage();
+const currentPath = page.url;
+const showSidebar = ref(false); // Hidden by default on small screens
 
 function toggleSidebar() {
-  showSidebar.value = !showSidebar.value
+  showSidebar.value = !showSidebar.value;
 }
 
-const logOut= async () =>{
-  try{
-    const response = await axios.get('/logout');
-    if(response.status === 200){
+const logOut = async () => {
+  try {
+    const response = await axios.get("/logout");
+    if (response.status === 200) {
       setTimeout(() => {
         router.visit("/login");
       }, 1000);
       showSuccess(response.data.data);
-    }else{
+    } else {
       showError(response.data.data);
     }
-  }catch(error){
+  } catch (error) {
     showError("Something went wrong");
   }
-}
-
+};
 </script>
 
 <template>
@@ -53,7 +52,12 @@ const logOut= async () =>{
           <Link href="#"><i class="bi bi-facebook"></i></Link>
           <Link href="#"><i class="bi bi-instagram"></i></Link>
           <Link href="#"><i class="bi bi-linkedin"></i></Link>
-          <Link @click="logOut()" class="btn btn-sm text-white shadow-sm" style="background-color: #34b7a7;">Log Out</Link>
+          <Link
+            @click="logOut()"
+            class="btn btn-sm text-white shadow-sm"
+            style="background-color: #34b7a7"
+            >Log Out</Link
+          >
         </div>
       </div>
     </nav>
@@ -64,11 +68,11 @@ const logOut= async () =>{
       <aside
         class="bg-white border-end shadow-sm p-3 position-relative"
         :class="{
-          'd-none d-xl-block': !showSidebar,     // Hide on small if not toggled
-          'd-block': showSidebar,                // Show on small when toggled
-          'd-xl-block': true                     // Always show on xl+
+          'd-none d-xl-block': !showSidebar, // Hide on small if not toggled
+          'd-block': showSidebar, // Show on small when toggled
+          'd-xl-block': true, // Always show on xl+
         }"
-        style="width: 240px;"
+        style="width: 240px"
       >
         <!-- Close button for mobile -->
         <button
@@ -80,22 +84,56 @@ const logOut= async () =>{
 
         <ul class="nav flex-column">
           <li class="nav-item mb-2">
-            <Link :href="'/dashboard'" class="nav-link" :class="{ active: currentPath === '/dashboard' }">
+            <Link
+              :href="'/dashboard'"
+              class="nav-link"
+              :class="{ active: currentPath === '/dashboard' }"
+            >
               <i class="bi bi-speedometer2 me-2"></i> Dashboard
             </Link>
           </li>
           <li class="nav-item mb-2">
-            <Link :href="'/users'" class="nav-link" :class="{ active: currentPath === '/users' }">
+            <Link
+              :href="'/users'"
+              class="nav-link"
+              :class="{ active: currentPath === '/users' }"
+            >
               <i class="bi bi-people me-2"></i> Users
             </Link>
           </li>
           <li class="nav-item mb-2">
-            <Link :href="'/messages'" class="nav-link" :class="{ active: currentPath === '/messages' }">
+            <Link
+              :href="'/messages'"
+              class="nav-link"
+              :class="{ active: currentPath === '/messages' }"
+            >
               <i class="bi bi-chat-dots me-2"></i> Messages
             </Link>
           </li>
           <li class="nav-item mb-2">
-            <Link :href="'/settings'" class="nav-link" :class="{ active: currentPath === '/settings' }">
+            <Link
+              :href="'/address'"
+              class="nav-link"
+              :class="{ active: currentPath === '/address' }"
+            >
+              <i class="bi bi-geo-alt me-2"></i> Address
+            </Link>
+          </li>
+          <li class="nav-item mb-2">
+            <Link
+              :href="'/location'"
+              class="nav-link"
+              :class="{ active: currentPath === '/location' }"
+            >
+              <i class="bi bi-map me-2"></i> Map URL
+            </Link>
+          </li>
+          <li class="nav-item mb-2">
+            <Link
+              :href="'/settings'"
+              class="nav-link"
+              :class="{ active: currentPath === '/settings' }"
+            >
               <i class="bi bi-gear me-2"></i> Settings
             </Link>
           </li>

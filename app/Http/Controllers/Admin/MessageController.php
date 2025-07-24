@@ -81,7 +81,7 @@ class MessageController extends Controller
     public function deleteAllMessage(Request $request)
     {
         if (Auth::check()) {
-            ContactMessage::delete();
+            ContactMessage::truncate();
 
             return ResponseHelper::Out(true, 'All Message Deleted Successfully', 200);
         } else {
